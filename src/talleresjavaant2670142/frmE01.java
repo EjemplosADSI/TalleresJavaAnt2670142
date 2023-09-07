@@ -4,6 +4,7 @@
  */
 package talleresjavaant2670142;
 
+import java.text.DecimalFormat;
 import javax.swing.ImageIcon;
 
 /**
@@ -107,7 +108,7 @@ public class frmE01 extends javax.swing.JFrame {
         lblResultado.setText("0");
         lblResultado.setOpaque(true);
         jpnFrmE01.add(lblResultado);
-        lblResultado.setBounds(40, 250, 60, 22);
+        lblResultado.setBounds(40, 250, 160, 22);
 
         btnCalcular.setText("Calcular");
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -207,12 +208,13 @@ public class frmE01 extends javax.swing.JFrame {
         // TODO add your handling code here:
         int N1 = 0, N2 = 0;
         float Resultado = 0.0f;
+        DecimalFormat df = new DecimalFormat("0.00");
         
         N1 = Integer.parseInt(txtNumero1.getText());
         N2 = Integer.parseInt(txtNumero2.getText());
         Resultado = (float) N1 / N2;
         
-        lblResultado.setText(String.valueOf(Resultado));
+        lblResultado.setText(df.format(Resultado));
         lblResultado.setVisible(true);
     }//GEN-LAST:event_btnCalcularActionPerformed
 
