@@ -4,6 +4,7 @@
  */
 package talleresjavaant2670142;
 
+import java.awt.event.KeyEvent;
 import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
@@ -105,6 +106,12 @@ public class frmE01 extends javax.swing.JFrame {
         jLabel5.setBounds(40, 170, 80, 17);
         jpnFrmE01.add(txtNumero1);
         txtNumero1.setBounds(40, 140, 170, 22);
+
+        txtNumero2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                keyPressTxtNumero2(evt);
+            }
+        });
         jpnFrmE01.add(txtNumero2);
         txtNumero2.setBounds(40, 190, 170, 22);
 
@@ -228,8 +235,7 @@ public class frmE01 extends javax.swing.JFrame {
         }
     }
     
-    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
-        // TODO add your handling code here:
+    public void calcularDivision(){
         int N1 = 0, N2 = 0;
         float Resultado = 0.0f;
         DecimalFormat df = new DecimalFormat("0.00");
@@ -247,7 +253,19 @@ public class frmE01 extends javax.swing.JFrame {
                 lblResultado.setVisible(true);
             }
         }
+    }
+    
+    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
+        // TODO add your handling code here:
+        calcularDivision();
     }//GEN-LAST:event_btnCalcularActionPerformed
+
+    private void keyPressTxtNumero2(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_keyPressTxtNumero2
+        // TODO add your handling code here:
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            calcularDivision();
+        }
+    }//GEN-LAST:event_keyPressTxtNumero2
 
     /**
      * @param args the command line arguments
