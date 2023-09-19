@@ -209,11 +209,16 @@ public class frmE01 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpnFrmE01, javax.swing.GroupLayout.DEFAULT_SIZE, 238, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jpnFrmE01, javax.swing.GroupLayout.PREFERRED_SIZE, 240, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpnFrmE01, javax.swing.GroupLayout.DEFAULT_SIZE, 328, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 17, Short.MAX_VALUE)
+                .addComponent(jpnFrmE01, javax.swing.GroupLayout.PREFERRED_SIZE, 329, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -222,6 +227,18 @@ public class frmE01 extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
+
+    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
+        // TODO add your handling code here:
+        calcularDivision();
+    }//GEN-LAST:event_btnCalcularActionPerformed
+
+    private void keyPressTxtNumero2(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_keyPressTxtNumero2
+        // TODO add your handling code here:
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            calcularDivision();
+        }
+    }//GEN-LAST:event_keyPressTxtNumero2
 
     public boolean isNumber (String numero){
         try{
@@ -255,18 +272,6 @@ public class frmE01 extends javax.swing.JFrame {
         }
     }
     
-    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
-        // TODO add your handling code here:
-        calcularDivision();
-    }//GEN-LAST:event_btnCalcularActionPerformed
-
-    private void keyPressTxtNumero2(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_keyPressTxtNumero2
-        // TODO add your handling code here:
-        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            calcularDivision();
-        }
-    }//GEN-LAST:event_keyPressTxtNumero2
-
     /**
      * @param args the command line arguments
      */
