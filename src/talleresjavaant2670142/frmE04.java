@@ -111,7 +111,7 @@ public class frmE04 extends javax.swing.JFrame {
         jpnFrmE01.add(btnCalcular);
         btnCalcular.setBounds(90, 300, 75, 23);
         jpnFrmE01.add(lblResultado);
-        lblResultado.setBounds(40, 250, 160, 30);
+        lblResultado.setBounds(40, 260, 160, 30);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/talleresjavaant2670142/images/link_small.jpg"))); // NOI18N
         jpnFrmE01.add(jLabel1);
@@ -223,7 +223,9 @@ public class frmE04 extends javax.swing.JFrame {
             this.showError("El numero " + Number + " es negativo o 0", "Numero Invalido");
             return false; 
         }
-        lblResultado.setText(String.format("El numero %d %s es primo de 2 y 3", Number, (Number % 2 == 0 && Number % 2 == 0) ? "Si" : "No" ));
+        String text = "<html><center><b>El numero %d %s es primo de 2 y 3<b/></center></html>";
+        String result = String.format(text, Number, ((Number % 2 == 0) && (Number % 3 == 0)) ? "Si" : "No" );
+        lblResultado.setText(result);
         return true;
     }
     
