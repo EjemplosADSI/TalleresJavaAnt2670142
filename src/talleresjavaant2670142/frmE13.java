@@ -5,29 +5,27 @@
 package talleresjavaant2670142;
 
 import java.awt.event.KeyEvent;
-import java.time.Month;
-import java.time.format.TextStyle;
-import java.util.Locale;
 import javax.swing.JOptionPane;
 
 /**
  *
  * @author grani
  */
-public class frmE10 extends javax.swing.JFrame {
+public class frmE13 extends javax.swing.JFrame {
 
     /**
-     * Creates new form frmE10
+     * Creates new form frmE13
      */
-    public frmE10() {
+    public frmE13() {
         initComponents();
     }
-
-    /*  Ejercicio 10
-        Dado un número (leído por teclado), que representa los segundos que ha 
-        invertido una persona en hacer un examen, determinar cuántas horas, 
-        minutos y segundos ha invertido. Imprima el resultado por pantalla.
-    */    
+    
+    /* Ejercicio 13
+        Desarrollar un algoritmo que reciba como entrada un carácter y una fase 
+        o cadena de caracteres. Debe dar como salida el número de ocurrencias 
+        de dicho carácter en la cadena de caracteres. 
+        Solamente se debe permitir un carácter.
+    */
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -38,14 +36,16 @@ public class frmE10 extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jpnFrmE01 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        btnCalcular = new javax.swing.JButton();
-        lblResultado = new javax.swing.JLabel();
+        jpnFrmE2 = new javax.swing.JPanel();
         jLabel5 = new javax.swing.JLabel();
-        txtSegundos = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        btnCalcular1 = new javax.swing.JButton();
+        lblResultado = new javax.swing.JLabel();
+        txtCadena = new javax.swing.JTextField();
+        jLabel10 = new javax.swing.JLabel();
+        txtCaracter = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         menuBar = new javax.swing.JMenuBar();
         fileMenu = new javax.swing.JMenu();
@@ -64,57 +64,71 @@ public class frmE10 extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jpnFrmE01.setLayout(null);
+        jpnFrmE2.setLayout(null);
 
-        jLabel2.setFont(new java.awt.Font("Cascadia Code", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel2.setText("<html><center>Ejercicio 10</center>");
-        jpnFrmE01.add(jLabel2);
-        jLabel2.setBounds(50, 20, 160, 60);
+        jLabel5.setFont(new java.awt.Font("Cascadia Code", 1, 24)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel5.setText("<html><center>Ejercicio 13</center>");
+        jpnFrmE2.add(jLabel5);
+        jLabel5.setBounds(50, 20, 160, 60);
 
-        jLabel3.setFont(new java.awt.Font("Cascadia Code", 1, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel3.setText("Segundos a HH:MM:SS");
-        jpnFrmE01.add(jLabel3);
-        jLabel3.setBounds(40, 80, 170, 17);
+        jLabel7.setFont(new java.awt.Font("Cascadia Code", 1, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel7.setText("Ocurrencias Caracter");
+        jpnFrmE2.add(jLabel7);
+        jLabel7.setBounds(40, 80, 170, 17);
 
-        jLabel6.setFont(new java.awt.Font("Cascadia Code", 1, 12)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel6.setText("Resultado:");
-        jpnFrmE01.add(jLabel6);
-        jLabel6.setBounds(40, 180, 120, 15);
+        jLabel8.setFont(new java.awt.Font("Cascadia Code", 1, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel8.setText("Caracter");
+        jpnFrmE2.add(jLabel8);
+        jLabel8.setBounds(40, 170, 80, 20);
 
-        btnCalcular.setText("Calcular");
-        btnCalcular.addActionListener(new java.awt.event.ActionListener() {
+        jLabel9.setFont(new java.awt.Font("Cascadia Code", 1, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel9.setText("Resultado:");
+        jpnFrmE2.add(jLabel9);
+        jLabel9.setBounds(40, 220, 120, 15);
+
+        btnCalcular1.setText("Calcular");
+        btnCalcular1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCalcularActionPerformed(evt);
+                btnCalcular1ActionPerformed(evt);
             }
         });
-        jpnFrmE01.add(btnCalcular);
-        btnCalcular.setBounds(80, 300, 75, 23);
+        jpnFrmE2.add(btnCalcular1);
+        btnCalcular1.setBounds(80, 300, 75, 23);
 
         lblResultado.setBackground(new java.awt.Color(0, 0, 0));
-        lblResultado.setFont(new java.awt.Font("Cascadia Code", 1, 14)); // NOI18N
+        lblResultado.setFont(new java.awt.Font("Cascadia Code", 1, 10)); // NOI18N
         lblResultado.setForeground(new java.awt.Color(0, 0, 0));
-        jpnFrmE01.add(lblResultado);
-        lblResultado.setBounds(40, 210, 160, 70);
+        jpnFrmE2.add(lblResultado);
+        lblResultado.setBounds(20, 240, 200, 50);
 
-        jLabel5.setFont(new java.awt.Font("Cascadia Code", 1, 14)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("Numero de Seg:");
-        jpnFrmE01.add(jLabel5);
-        jLabel5.setBounds(40, 110, 130, 20);
-
-        txtSegundos.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtCadena.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtSegundosKeyPressed(evt);
+                txtCadenaKeyPressed(evt);
             }
         });
-        jpnFrmE01.add(txtSegundos);
-        txtSegundos.setBounds(40, 140, 160, 22);
+        jpnFrmE2.add(txtCadena);
+        txtCadena.setBounds(40, 130, 160, 22);
+
+        jLabel10.setFont(new java.awt.Font("Cascadia Code", 1, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel10.setText("Cadena");
+        jpnFrmE2.add(jLabel10);
+        jLabel10.setBounds(40, 110, 80, 20);
+
+        txtCaracter.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtCaracterKeyPressed(evt);
+            }
+        });
+        jpnFrmE2.add(txtCaracter);
+        txtCaracter.setBounds(40, 190, 160, 22);
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/talleresjavaant2670142/images/link_small.jpg"))); // NOI18N
-        jpnFrmE01.add(jLabel1);
+        jpnFrmE2.add(jLabel1);
         jLabel1.setBounds(0, 0, 240, 330);
 
         fileMenu.setMnemonic('f');
@@ -184,11 +198,11 @@ public class frmE10 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpnFrmE01, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jpnFrmE2, javax.swing.GroupLayout.PREFERRED_SIZE, 241, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jpnFrmE01, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jpnFrmE2, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -197,6 +211,7 @@ public class frmE10 extends javax.swing.JFrame {
     private void exitMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitMenuItemActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
+
     public void showError(String mensaje, String titulo){
         JOptionPane.showMessageDialog(this,mensaje, titulo, JOptionPane.ERROR_MESSAGE);
     }
@@ -205,39 +220,43 @@ public class frmE10 extends javax.swing.JFrame {
         JOptionPane.showMessageDialog(this,mensaje, titulo, JOptionPane.INFORMATION_MESSAGE);
     }
     
-    public boolean isValidNumber(String numero) {
-        try {
-            int Number = Integer.parseInt(numero);
-            return true;
-        } catch (NumberFormatException NFE) {
-            this.showError("El texto " + numero + " no es un numero valido", "Numero Invalido");
-            return false;
+    private void btnCalcular1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcular1ActionPerformed
+        // TODO add your handling code here:
+        ocurrenciasCaracter();
+    }//GEN-LAST:event_btnCalcular1ActionPerformed
+
+    private void txtCadenaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCadenaKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            txtCaracter.grabFocus();
         }
-    }
-    
-    public boolean calcularTiempo(){       
-        if(!isValidNumber(txtSegundos.getText())){ return false; }
-        int segundos = Integer.parseInt(txtSegundos.getText());        
-        int horas = segundos / 3600;
-        int minutos = (segundos % 3600) / 60;
-        segundos = segundos % 60;
+    }//GEN-LAST:event_txtCadenaKeyPressed
+
+    public boolean ocurrenciasCaracter(){
+        String cadena = txtCadena.getText();
+        String caracter = txtCaracter.getText();
+        if(caracter.length() > 1){
+            showError("Debe ser un solo caracter", "Error");
+            return false; 
+        }
         
-        String text = "<html><center><b>El tiempo invertido en el examen es: %d horas, %d minutos y %d segundos<b/></center></html>";
-        String result = String.format(text,  horas, minutos, segundos );
+        int ocurrencias = 0;
+        for (int i = 0; i < cadena.length(); i++) {
+            if (cadena.charAt(i) == caracter.charAt(0)) {
+                ocurrencias++;
+            }
+        }
+        
+        String text = "<html><center><b>El carácter '%c' aparece %d veces en la cadena '%s'<b/></center></html>";
+        String result = String.format(text, caracter.charAt(0), ocurrencias, cadena );
         lblResultado.setText(result);
         return true;
     }
     
-    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
-        // TODO add your handling code here:
-        calcularTiempo();
-    }//GEN-LAST:event_btnCalcularActionPerformed
-
-    private void txtSegundosKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSegundosKeyPressed
+    private void txtCaracterKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCaracterKeyPressed
         if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
-            calcularTiempo();
+            ocurrenciasCaracter();
         }
-    }//GEN-LAST:event_txtSegundosKeyPressed
+    }//GEN-LAST:event_txtCaracterKeyPressed
 
     /**
      * @param args the command line arguments
@@ -256,27 +275,27 @@ public class frmE10 extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(frmE10.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmE13.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(frmE10.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmE13.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(frmE10.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmE13.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(frmE10.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(frmE13.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new frmE10().setVisible(true);
+                new frmE13().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem aboutMenuItem;
-    private javax.swing.JButton btnCalcular;
+    private javax.swing.JButton btnCalcular1;
     private javax.swing.JMenuItem contentsMenuItem;
     private javax.swing.JMenuItem copyMenuItem;
     private javax.swing.JMenuItem cutMenuItem;
@@ -286,18 +305,20 @@ public class frmE10 extends javax.swing.JFrame {
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jpnFrmE01;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jpnFrmE2;
     private javax.swing.JLabel lblResultado;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem openMenuItem;
     private javax.swing.JMenuItem pasteMenuItem;
     private javax.swing.JMenuItem saveAsMenuItem;
     private javax.swing.JMenuItem saveMenuItem;
-    private javax.swing.JTextField txtSegundos;
+    private javax.swing.JTextField txtCadena;
+    private javax.swing.JTextField txtCaracter;
     // End of variables declaration//GEN-END:variables
 
 }
