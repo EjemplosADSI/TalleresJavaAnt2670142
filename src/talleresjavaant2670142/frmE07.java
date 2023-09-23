@@ -20,7 +20,14 @@ public class frmE07 extends javax.swing.JFrame {
     public frmE07() {
         initComponents();
     }
-
+    
+    /* Ejercicio 7
+        Calcular la hipotenusa de un triángulo, teniendo como base el valor del 
+        cateto 1 y 2 que serán dados por el usuario. Para esto debe de hacer uso
+        del Teorema de Pitágoras en el cálculo de la hipotenusa teniendo los catetos. 
+        (h= √(a^2 )+b^2) no se debe hacer uso de la librería Math.hypot
+    */
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

@@ -8,17 +8,16 @@ import java.awt.event.KeyEvent;
 import java.text.DecimalFormat;
 import javax.swing.JOptionPane;
 
-/*
-En este problema, los datos de entrada son los dos valores enteros que ingresará 
-el usuario a través del teclado (los llamaremos a y b) y la salida será su 
-cociente (un número flotante). Ahora bien, existe la posibilidad de que el 
-usuario ingrese como segundo valor el número 0 (cero). En este caso, no podremos 
-mostrar el cociente ya que la división por cero es una indeterminación, así que 
-tendremos que emitir un mensaje informando las causas por las cuales no se podrá 
-efectuar la operación.
+/* Ejercicio 1
+    En este problema, los datos de entrada son los dos valores enteros que ingresará 
+    el usuario a través del teclado (los llamaremos a y b) y la salida será su 
+    cociente (un número flotante). Ahora bien, existe la posibilidad de que el 
+    usuario ingrese como segundo valor el número 0 (cero). En este caso, no podremos 
+    mostrar el cociente ya que la división por cero es una indeterminación, así que 
+    tendremos que emitir un mensaje informando las causas por las cuales no se podrá 
+    efectuar la operación.
 
 */
-
 
 /**
  *
@@ -228,6 +227,14 @@ public class frmE01 extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
+    public void showError(String mensaje, String titulo){
+        JOptionPane.showMessageDialog(this,mensaje, titulo, JOptionPane.ERROR_MESSAGE);
+    }
+    
+    public void showInfo(String mensaje, String titulo){
+        JOptionPane.showMessageDialog(this,mensaje, titulo, JOptionPane.INFORMATION_MESSAGE);
+    }
+    
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         // TODO add your handling code here:
         calcularDivision();
@@ -240,36 +247,36 @@ public class frmE01 extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_keyPressTxtNumero2
 
-    public boolean isNumber (String numero){
-        try{
+    public boolean isValidNumber(String numero) {
+        try {
             int Number = Integer.parseInt(numero);
             return true;
-        }catch(NumberFormatException NFE){
-            JOptionPane.showMessageDialog(this, 
-                    "El texto "+numero +" no es un numero valido", 
-                    "Numero Invalido", JOptionPane.ERROR_MESSAGE);
+        } catch (NumberFormatException NFE) {
+            this.showError("El texto " + numero + " no es un numero valido", "Numero Invalido");
             return false;
         }
     }
     
-    public void calcularDivision(){
+    public boolean calcularDivision(){
         int N1 = 0, N2 = 0;
         float Resultado = 0.0f;
+        String str1 = txtNumero1.getText();
+        String str2 = txtNumero2.getText();
         DecimalFormat df = new DecimalFormat("0.00");
         
-        if(txtNumero2.getText().equalsIgnoreCase("0")){
-            JOptionPane.showMessageDialog(this, "Error 0 no esta permitido como segundo numero", "Valor Incorrecto", JOptionPane.ERROR_MESSAGE);
+        if(str2.equalsIgnoreCase("0")){
+            showError("Error 0 no esta permitido como segundo numero", "Valor Incorrecto");
             txtNumero2.setText("");
-        }else{
-            if(isNumber(txtNumero1.getText()) && isNumber(txtNumero2.getText())){
-                N1 = Integer.parseInt(txtNumero1.getText());
-                N2 = Integer.parseInt(txtNumero2.getText());
-                Resultado = (float) N1 / N2;
-
-                lblResultado.setText(df.format(Resultado));
-                lblResultado.setVisible(true);
-            }
+            return false;
         }
+        if(!isValidNumber(str1) || !isValidNumber(str1)){ return false;}
+        N1 = Integer.parseInt(str1);
+        N2 = Integer.parseInt(str2);
+        Resultado = (float) N1 / N2;
+
+        lblResultado.setText(df.format(Resultado));
+        lblResultado.setVisible(true);
+        return true;
     }
     
     /**

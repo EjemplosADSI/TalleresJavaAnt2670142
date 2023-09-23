@@ -4,6 +4,7 @@
  */
 package talleresjavaant2670142;
 
+import java.awt.event.KeyEvent;
 import java.time.Month;
 import java.time.format.TextStyle;
 import java.util.Locale;
@@ -22,6 +23,12 @@ public class frmE10 extends javax.swing.JFrame {
         initComponents();
     }
 
+    /*  Ejercicio 10
+        Dado un número (leído por teclado), que representa los segundos que ha 
+        invertido una persona en hacer un examen, determinar cuántas horas, 
+        minutos y segundos ha invertido. Imprima el resultado por pantalla.
+    */    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -97,6 +104,12 @@ public class frmE10 extends javax.swing.JFrame {
         jLabel5.setText("Numero de Seg:");
         jpnFrmE01.add(jLabel5);
         jLabel5.setBounds(40, 110, 130, 20);
+
+        txtSegundos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtSegundosKeyPressed(evt);
+            }
+        });
         jpnFrmE01.add(txtSegundos);
         txtSegundos.setBounds(40, 140, 160, 22);
 
@@ -219,6 +232,12 @@ public class frmE10 extends javax.swing.JFrame {
         // TODO add your handling code here:
         calcularTiempo();
     }//GEN-LAST:event_btnCalcularActionPerformed
+
+    private void txtSegundosKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtSegundosKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            calcularTiempo();
+        }
+    }//GEN-LAST:event_txtSegundosKeyPressed
 
     /**
      * @param args the command line arguments

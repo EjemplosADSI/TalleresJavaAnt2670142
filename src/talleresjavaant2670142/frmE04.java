@@ -21,7 +21,7 @@ public class frmE04 extends javax.swing.JFrame {
         initComponents();
     }
     
-    /*
+    /* Ejercicio 4
         En este problema tenemos un único dato de entrada: 
         un valor numérico entero que deberá ingresar el usuario. 
         La salida del algoritmo será informar si el numero ingresado 

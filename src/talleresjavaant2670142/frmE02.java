@@ -20,6 +20,17 @@ public class frmE02 extends javax.swing.JFrame {
         initComponents();
     }
 
+    /* Ejercicio 2
+        En este problema tenemos un único dato de entrada: un valor numérico 
+        entero que deberá ingresar el usuario. La salida del algoritmo será 
+        informar si el usuario ingresó un valor par o impar. 
+        Sabemos que un número par es aquel que es divisible por 2 o, también, 
+        que un número es par si el valor residual que se obtiene al dividirlo 
+        por 2 es cero. Según lo anterior, podremos informar que el número 
+        ingresado por el usuario es par si al dividirlo por 2 obtenemos un resto 
+        igual a cero. De lo contrario, informaremos que el número es impar.
+    */
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -191,24 +202,31 @@ public class frmE02 extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
 
-    public boolean isNumber (String numero){
-        try{
+    public void showError(String mensaje, String titulo){
+        JOptionPane.showMessageDialog(this,mensaje, titulo, JOptionPane.ERROR_MESSAGE);
+    }
+    
+    public void showInfo(String mensaje, String titulo){
+        JOptionPane.showMessageDialog(this,mensaje, titulo, JOptionPane.INFORMATION_MESSAGE);
+    }
+    
+    public boolean isValidNumber(String numero) {
+        try {
             int Number = Integer.parseInt(numero);
             return true;
-        }catch(NumberFormatException NFE){
-            JOptionPane.showMessageDialog(this, 
-                    "El texto "+numero +" no es un numero valido", 
-                    "Numero Invalido", JOptionPane.ERROR_MESSAGE);
+        } catch (NumberFormatException NFE) {
+            this.showError("El texto " + numero + " no es un numero valido", "Numero Invalido");
             return false;
         }
     }
     
-    public void calcularParImpar(){       
-        if(isNumber(txtNumero1.getText())){
-            int Number = Integer.parseInt(txtNumero1.getText());
-            lblResultado.setText((Number % 2 == 0) ? "Es Par" : "Es Impar");
-            lblResultado.setVisible(true);
-        }
+    public boolean calcularParImpar(){
+        String strNum1 = txtNumero1.getText();
+        if(isValidNumber(strNum1)){ return false; };
+        int Number = Integer.parseInt(strNum1);
+        lblResultado.setText((Number % 2 == 0) ? "Es Par" : "Es Impar");
+        lblResultado.setVisible(true);
+        return true;
     }
     
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed

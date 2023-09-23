@@ -4,6 +4,7 @@
  */
 package talleresjavaant2670142;
 
+import java.awt.event.KeyEvent;
 import java.time.Month;
 import java.time.format.TextStyle;
 import java.util.Locale;
@@ -22,7 +23,7 @@ public class frmE09 extends javax.swing.JFrame {
         initComponents();
     }
 
-    /**
+    /** Ejercicio 9
      * Se debe de ingresar un numero comprendido entre 1 y 12 por el usuario. 
      * El algoritmo debe de imprimir el mes correspondiente en texto.
      */
@@ -104,6 +105,11 @@ public class frmE09 extends javax.swing.JFrame {
         jLabel5.setBounds(40, 110, 130, 20);
 
         cbxNumeroMes.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12" }));
+        cbxNumeroMes.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                cbxNumeroMesKeyPressed(evt);
+            }
+        });
         jpnFrmE01.add(cbxNumeroMes);
         cbxNumeroMes.setBounds(40, 140, 140, 22);
 
@@ -212,6 +218,12 @@ public class frmE09 extends javax.swing.JFrame {
         // TODO add your handling code here:
         calcularHipotenusa();
     }//GEN-LAST:event_btnCalcularActionPerformed
+
+    private void cbxNumeroMesKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_cbxNumeroMesKeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            calcularHipotenusa();
+        }
+    }//GEN-LAST:event_cbxNumeroMesKeyPressed
 
     /**
      * @param args the command line arguments

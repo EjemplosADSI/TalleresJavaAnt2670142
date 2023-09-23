@@ -4,6 +4,7 @@
  */
 package talleresjavaant2670142;
 
+import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -22,6 +23,12 @@ public class frmE11 extends javax.swing.JFrame {
         initComponents();
     }
 
+    /*  Ejercicio 11
+        Dado un número entero leído por pantalla, muestre cada uno de los 
+        dígitos del número en orden inverso. Ej: Si el número es 324, 
+        se debe mostrar 4, 2, 3. Solamente se deben permitir números positivos.
+    */
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -97,6 +104,12 @@ public class frmE11 extends javax.swing.JFrame {
         jLabel5.setText("Numero");
         jpnFrmE01.add(jLabel5);
         jLabel5.setBounds(40, 110, 130, 20);
+
+        txtNumero1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNumero1KeyPressed(evt);
+            }
+        });
         jpnFrmE01.add(txtNumero1);
         txtNumero1.setBounds(40, 140, 160, 22);
 
@@ -221,6 +234,12 @@ public class frmE11 extends javax.swing.JFrame {
         // TODO add your handling code here:
         numeroInverso();
     }//GEN-LAST:event_btnCalcularActionPerformed
+
+    private void txtNumero1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumero1KeyPressed
+        if(evt.getKeyCode() == KeyEvent.VK_ENTER) {
+            numeroInverso();
+        }
+    }//GEN-LAST:event_txtNumero1KeyPressed
 
     /**
      * @param args the command line arguments

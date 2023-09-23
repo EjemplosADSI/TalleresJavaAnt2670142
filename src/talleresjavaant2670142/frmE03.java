@@ -20,7 +20,17 @@ public class frmE03 extends javax.swing.JFrame {
     public frmE03() {
         initComponents();
     }
-
+    
+    /* Ejercicio 3
+        En este problema debemos de definir una constante con el valor de PI 
+        como 3,1416 y tenemos un único dato de entrada dado por el usuario: 
+        un valor numérico que puede ser entero o flotante que indicara el 
+        radio de un círculo. La salida del algoritmo será el área del circulo 
+        teniendo en cuenta que A=PI*r^2. Si el usuario ingresó valor negativo 
+        o cero tendremos que emitir un mensaje informando las causas por las 
+        cuales no se podrá efectuar la operación.
+    */
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -192,31 +202,47 @@ public class frmE03 extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_exitMenuItemActionPerformed
     
-    public boolean isDoubleNumber (String numero){
+    public void showError(String mensaje, String titulo){
+        JOptionPane.showMessageDialog(this,mensaje, titulo, JOptionPane.ERROR_MESSAGE);
+    }
+    
+    public void showInfo(String mensaje, String titulo){
+        JOptionPane.showMessageDialog(this,mensaje, titulo, JOptionPane.INFORMATION_MESSAGE);
+    }
+    
+    public boolean isValidNumber(String numero) {
+        try {
+            int Number = Integer.parseInt(numero);
+            return true;
+        } catch (NumberFormatException NFE) {
+            showError("El texto " + numero + " no es un numero valido", "Numero Invalido");
+            return false;
+        }
+    }    
+    
+    public boolean isValidDoubleNumber (String numero){
         try{
             double Number = Double.parseDouble(numero);
             return true;
         }catch(NumberFormatException NFE){
-            JOptionPane.showMessageDialog(this, 
-                    "El texto "+numero +" no es un numero valido", 
-                    "Numero Invalido", JOptionPane.ERROR_MESSAGE);
+            showError("El texto " + numero + " no es un numero valido", "Numero Invalido");
             return false;
         }
     }
     
-    public void calcularRadio(){       
-        if(isDoubleNumber(txtNumero1.getText())){
-            double Number = Double.parseDouble(txtNumero1.getText());
-            if(Number > 0){
-                DecimalFormat df = new DecimalFormat("0.00");
-                double Resultado = Math.PI * Math.pow(Number, 2);
-                lblResultado.setText(df.format(Resultado));
-                lblResultado.setVisible(true);
-            }else{
-                JOptionPane.showMessageDialog(this, "ERROR: El numero debe ser mayor a cero", "Error Numero Incorrecto", JOptionPane.ERROR_MESSAGE);
-            }
-
-        }
+    public boolean calcularRadio(){
+        String strNum = txtNumero1.getText();        
+        if(!isValidDoubleNumber(strNum)){ return false; }
+        double Number = Double.parseDouble(strNum);
+        if(Number <= 0){
+            showError("ERROR: El numero debe ser mayor a cero", "Error Numero Incorrecto");
+            return false;
+        }        
+        DecimalFormat df = new DecimalFormat("0.00");
+        double Resultado = Math.PI * Math.pow(Number, 2);
+        lblResultado.setText(df.format(Resultado));
+        lblResultado.setVisible(true);
+        return true;
     }
     
     private void txtNumero1KeyPressTxtNumber1(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNumero1KeyPressTxtNumber1

@@ -21,7 +21,7 @@ public class frmE06 extends javax.swing.JFrame {
         initComponents();
     }
 
-    /*
+    /* Ejercicio 6
         Leer tres valores numéricos enteros, indicar cuál es el mayor, 
         cuál es el del medio y cuál, el menor. 
         Considerar que los tres valores serán diferentes
